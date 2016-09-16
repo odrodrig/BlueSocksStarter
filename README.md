@@ -174,7 +174,74 @@ function getTone(data){
 getTone(data.message);
 ```
 
-###6. Final Deployment
+###6. Adding Language Selection
+1. Now we need to add the language selection portion for the translation command. This is done in the **main.js** file. To find the **main.js** file, expand the **public** folder on the left, then expand the **js** folder, and select **mainjs**.
+2. We are going to be adding the portion of code that detects translations based on the "/translate" command. To do this, find **line 84** and paste in the following code:
+```javascript
+      //Translate to Spanish
+      if(message.substring(0, 18).toLowerCase() == "/translate spanish") {
+        console.log('sending to translate');
+        targetLang = "es";
+
+        socket.emit('translate', {message: message.substring(19), sourceLang: sourceLang, targetLang: targetLang});
+
+      }
+
+      //Translate to French
+      else if(message.substring(0, 17).toLowerCase() == "/translate french") {
+        console.log('sending to translate');
+        targetLang = "fr";
+
+        socket.emit('translate', {message: message.substring(18), sourceLang: sourceLang, targetLang: targetLang});
+
+      } 
+
+      //Translate to Italian
+      else if(message.substring(0, 18).toLowerCase() == "/translate italian") {
+        console.log('sending to translate');
+        targetLang = "it";
+
+        socket.emit('translate', {message: message.substring(19), sourceLang: sourceLang, targetLang: targetLang});
+
+      }
+
+      //Translate to Arabic
+      else if(message.substring(0, 17).toLowerCase() == "/translate arabic") {
+        console.log('sending to translate');
+        targetLang = "ar";
+
+        socket.emit('translate', {message: message.substring(18), sourceLang: sourceLang, targetLang: targetLang});
+
+      }
+
+      //Translate to Portuguese
+      else if(message.substring(0, 21).toLowerCase() == "/translate portuguese") {
+        console.log('sending to translate');
+        targetLang = "pt";
+
+        socket.emit('translate', {message: message.substring(22), sourceLang: sourceLang, targetLang: targetLang});
+
+      }
+
+      //Translate to English
+      else if(message.substring(0, 18).toLowerCase() == "/translate english") {
+        console.log('sending to translate');
+        targetLang = "en";
+
+        socket.emit('translate', {message: message.substring(19), sourceLang: sourceLang, targetLang: targetLang});
+
+      }
+     
+      //If no translation tag is found
+      else {
+        console.log("not translating");
+        socket.emit('new message', {message: message});
+      }
+```
+3. You may notice a line right under what you just pasted that ends with "Delete this" and a bunch of astericks. Go ahead and delete that entire line; it is not needed anymore.
+
+
+###7. Final Deployment
 Now that we have made the changes all we need to do is deploy the application. To do this, all you need to do is click on the triangle button at the top of the page. Once it's done deploying, you can open the application and start chatting.
 
 
