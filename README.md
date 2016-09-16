@@ -32,7 +32,7 @@ For this application, we will be using our browser based code editor in IBM Dev 
 2. The file we will be editing is the "app.js" file. Locate that file in the pane on the left.
 
 ###3. Adding the Watson Services to the code
-1. In order to use the Watson services we need to add the library to the code first. On ***line 13***, paste in the following:
+* In order to use the Watson services we need to add the library to the code first. On ***line 13***, paste in the following:
 ```javascript
 var watson = require('watson-developer-cloud');
 ```
@@ -76,7 +76,7 @@ var tonePass = "";
 ###4. Adding Watson Translation
 In this section, we will be adding the code necessary to use the Watson Translation service within your application.
 
-1. This section of code will call the Watson Language Translation from the library that we imported earlier. Go to **line 168** and add the following code:
+* This section of code will call the Watson Language Translation from the library that we imported earlier. Go to **line 168** and add the following code:
 ```javascript
     language_translation.translate({
       text: data.message, source : data.sourceLang, target: data.targetLang },
@@ -118,7 +118,7 @@ In this section, we will be adding the code necessary to use the Watson Translat
 ###5. Adding Watson Tone Analyzer
 Here we will add the code necessary to use the Watson Tone Analyzer service.
 
-1. First, we have to create the function named "getTone" that will do the tone analysis. Let's find **line 211** and paste in the following code:
+* First, we have to create the function named "getTone" that will do the tone analysis. Let's find **line 211** and paste in the following code:
 ```javascript
 function getTone(data){
     var tones;
@@ -175,7 +175,7 @@ getTone(data.message);
 ```
 
 ###6. Adding Language Selection
-1. Now we need to add the language selection portion for the translation command. This is done in the **main.js** file. To find the **main.js** file, expand the **public** folder on the left, then expand the **js** folder, and select **mainjs**.
+* Now we need to add the language selection portion for the translation command. This is done in the **main.js** file. To find the **main.js** file, expand the **public** folder on the left, then expand the **js** folder, and select **mainjs**.
 2. We are going to be adding the portion of code that detects translations based on the "/translate" command. To do this, find **line 84** and paste in the following code:
 ```javascript
       //Translate to Spanish
@@ -238,6 +238,7 @@ getTone(data.message);
         socket.emit('new message', {message: message});
       }
 ```
+
 3. You may notice a line right under what you just pasted that ends with "Delete this" and a bunch of astericks. Go ahead and delete that entire line; it is not needed anymore.
 
 
