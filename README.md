@@ -38,14 +38,14 @@ var watson = require('watson-developer-cloud');
 ```
 This will incorporate the Watson Developer Cloud library in you code.
 
-2. Now we need to get our usernammes and passwords for the services. Let's start by creating the username and password variables for both services. On **line 31** paste in the following code:
+* Now we need to get our usernammes and passwords for the services. Let's start by creating the username and password variables for both services. On **line 31** paste in the following code:
 ```javascript
 var username = "";
 var password = "";
 var toneUser = "";
 var tonePass = "";
 ```
-3. After that, we need to look up the values for the username and password. To do this, paste the following on **line 44**.
+* After that, we need to look up the values for the username and password. To do this, paste the following on **line 44**.
 ```javascript
   var watsonCreds = services['language_translation'][0].credentials;
   var toneCreds = services['tone_analyzer'][0].credentials;
@@ -56,7 +56,7 @@ var tonePass = "";
   toneUser = toneCreds.username;
   tonePass = toneCreds.password;
 ```
-4. With the username and password in hand, we can now call the Language Translation and Tone Analyzer functions from the Watson Developer Cloud library. To do this, find **line 57** and paste in the following: 
+* With the username and password in hand, we can now call the Language Translation and Tone Analyzer functions from the Watson Developer Cloud library. To do this, find **line 57** and paste in the following: 
 ```javascript
  var language_translation = watson.language_translation({
     username: username,
@@ -169,14 +169,14 @@ function getTone(data){
     }
   });
 ```
-2. Now that we have created the function, we will need to invoke it in our code. Find **line 100** and **line 166** and paste in the following code:
+* Now that we have created the function, we will need to invoke it in our code. Find **line 100** and **line 166** and paste in the following code:
 ```javascript
 getTone(data.message);
 ```
 
 ###6. Adding Language Selection
 * Now we need to add the language selection portion for the translation command. This is done in the **main.js** file. To find the **main.js** file, expand the **public** folder on the left, then expand the **js** folder, and select **mainjs**.
-2. We are going to be adding the portion of code that detects translations based on the "/translate" command. To do this, find **line 84** and paste in the following code:
+* We are going to be adding the portion of code that detects translations based on the "/translate" command. To do this, find **line 84** and paste in the following code:
 ```javascript
       //Translate to Spanish
       if(message.substring(0, 18).toLowerCase() == "/translate spanish") {
@@ -239,7 +239,7 @@ getTone(data.message);
       }
 ```
 
-3. You may notice a line right under what you just pasted that ends with "Delete this" and a bunch of astericks. Go ahead and delete that entire line; it is not needed anymore.
+* You may notice a line right under what you just pasted that ends with "Delete this" and a bunch of astericks. Go ahead and delete that entire line; it is not needed anymore.
 
 
 ###7. Final Deployment

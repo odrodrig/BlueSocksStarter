@@ -81,71 +81,8 @@ $(function() {
                                             Translation Handling
       *************************************************************************************************************/
     
-    /******************************************************************************
     
-      //Translate to Spanish
-      if(message.substring(0, 18).toLowerCase() == "/translate spanish") {
-        console.log('sending to translate');
-        targetLang = "es";
-
-        socket.emit('translate', {message: message.substring(19), sourceLang: sourceLang, targetLang: targetLang});
-
-      }
-
-      //Translate to French
-      else if(message.substring(0, 17).toLowerCase() == "/translate french") {
-        console.log('sending to translate');
-        targetLang = "fr";
-
-        socket.emit('translate', {message: message.substring(18), sourceLang: sourceLang, targetLang: targetLang});
-
-      } 
-
-      //Translate to Italian
-      else if(message.substring(0, 18).toLowerCase() == "/translate italian") {
-        console.log('sending to translate');
-        targetLang = "it";
-
-        socket.emit('translate', {message: message.substring(19), sourceLang: sourceLang, targetLang: targetLang});
-
-      }
-
-      //Translate to Arabic
-      else if(message.substring(0, 17).toLowerCase() == "/translate arabic") {
-        console.log('sending to translate');
-        targetLang = "ar";
-
-        socket.emit('translate', {message: message.substring(18), sourceLang: sourceLang, targetLang: targetLang});
-
-      }
-
-      //Translate to Portuguese
-      else if(message.substring(0, 21).toLowerCase() == "/translate portuguese") {
-        console.log('sending to translate');
-        targetLang = "pt";
-
-        socket.emit('translate', {message: message.substring(22), sourceLang: sourceLang, targetLang: targetLang});
-
-      }
-
-      //Translate to English
-      else if(message.substring(0, 18).toLowerCase() == "/translate english") {
-        console.log('sending to translate');
-        targetLang = "en";
-
-        socket.emit('translate', {message: message.substring(19), sourceLang: sourceLang, targetLang: targetLang});
-
-      }
-      
-      
-
-      //If no translation tag is found
-      else {
-        console.log("not translating");
-        socket.emit('new message', {message: message});
-      }
     
-    ******************************************************************************/
       socket.emit('new message', {message: message});  //Delete this ******************************************************************************
   }
  }
