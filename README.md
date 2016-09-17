@@ -20,7 +20,7 @@ To get the application deployed, start by clicking on the button below. This wil
 
 ###1. Deployment
 1. This tool requires a Bluemix account so you will need to either create one or log in with your existing account.
-2. Start by creating a unique name for your application. You can do this by adding your initials at the begining of the application name. For example, if my name is John Smith, I'd use jsBluesocks
+2. Start by creating a unique name for your application. You can do this by adding your initials at the beginning of the application name. For example, if my name is John Smith, I'd use jsBluesocks
 3. Verify that you are deploying to your organization and space. Dev is the default space.
 4. If everything is correct, click Deploy.
  
@@ -32,20 +32,20 @@ For this application, we will be using our browser based code editor in IBM Dev 
 2. The file we will be editing is the "app.js" file. Locate that file in the pane on the left.
 
 ###3. Adding the Watson Services to the code
-* In order to use the Watson services we need to add the library to the code first. On ***line 13***, paste in the following:
+* In order to use the Watson services we need to add the library to the code first. On ***line 14***, paste in the following:
 ```javascript
 var watson = require('watson-developer-cloud');
 ```
 This will incorporate the Watson Developer Cloud library in you code.
 
-* Now we need to get our usernammes and passwords for the services. Let's start by creating the username and password variables for both services. On **line 31** paste in the following code:
+* Now we need to get our usernammes and passwords for the services. Let's start by creating the username and password variables for both services. On **line 32** paste in the following code:
 ```javascript
 var username = "";
 var password = "";
 var toneUser = "";
 var tonePass = "";
 ```
-* After that, we need to look up the values for the username and password. To do this, paste the following on **line 44**.
+* After that, we need to look up the values for the username and password. To do this, paste the following on **line 43**.
 ```javascript
   var watsonCreds = services['language_translation'][0].credentials;
   var toneCreds = services['tone_analyzer'][0].credentials;
@@ -56,7 +56,7 @@ var tonePass = "";
   toneUser = toneCreds.username;
   tonePass = toneCreds.password;
 ```
-* With the username and password in hand, we can now call the Language Translation and Tone Analyzer functions from the Watson Developer Cloud library. To do this, find **line 57** and paste in the following: 
+* With the username and password in hand, we can now call the Language Translation and Tone Analyzer functions from the Watson Developer Cloud library. To do this, find **line 53** and paste in the following: 
 ```javascript
  var language_translation = watson.language_translation({
     username: username,
@@ -76,7 +76,7 @@ var tonePass = "";
 ###4. Adding Watson Translation
 In this section, we will be adding the code necessary to use the Watson Translation service within your application.
 
-* This section of code will call the Watson Language Translation from the library that we imported earlier. Go to **line 168** and add the following code:
+* This section of code will call the Watson Language Translation from the library that we imported earlier. Go to **line 165** and add the following code:
 ```javascript
     language_translation.translate({
       text: data.message, source : data.sourceLang, target: data.targetLang },
@@ -118,7 +118,7 @@ In this section, we will be adding the code necessary to use the Watson Translat
 ###5. Adding Watson Tone Analyzer
 Here we will add the code necessary to use the Watson Tone Analyzer service.
 
-* First, we have to create the function named "getTone" that will do the tone analysis. Let's find **line 211** and paste in the following code:
+* First, we have to create the function named "getTone" that will do the tone analysis. Let's find **line 209** and paste in the following code:
 ```javascript
 function getTone(data){
     var tones;
@@ -169,7 +169,7 @@ function getTone(data){
     }
   });
 ```
-* Now that we have created the function, we will need to invoke it in our code. Find **line 100** and **line 166** and paste in the following code:
+* Now that we have created the function, we will need to invoke it in our code. Find **line 95** and **line 163** and paste in the following code:
 ```javascript
 getTone(data.message);
 ```
