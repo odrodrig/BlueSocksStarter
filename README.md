@@ -168,6 +168,7 @@ function getTone(data){
       }
     }
   });
+}
 ```
 * Now that we have created the function, we will need to invoke it in our code. Find **line 95** and **line 163** and paste in the following code:
 ```javascript
