@@ -254,3 +254,9 @@ To translate, start your message with "/translate 'language'" replacing 'languag
 
 ##Completed Application
 If you would like to just deploy the final completed application, [click here](https://github.com/odrodrig/BlueSocksChat)
+
+##Credits
+* Base socket chat application is from the socket.io chat example found [here](https://github.com/socketio/socket.io)
+* Tone Analyzer and SockBot implementation built by [Stefania Kaczmarczyk](https://github.com/slkaczma)
+* Language Translation implemented by [Oliver Rodriguez](https://github.com/odrodrig)
+
